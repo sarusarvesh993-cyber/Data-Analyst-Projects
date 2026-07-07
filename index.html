@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarvesh Kommawar | AI & Data Analyst</title>
+    <title>Sarvesh Kommawar | AI & Data Engineer</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -64,9 +64,9 @@
         .hero-content { position: relative; z-index: 2; }
         .hero-badge {
             display: inline-block;
-            background: rgba(108,99,255,0.15);
-            border: 1px solid rgba(108,99,255,0.3);
-            color: var(--primary);
+            background: rgba(0,200,100,0.1);
+            border: 1px solid rgba(0,200,100,0.3);
+            color: #00C864;
             padding: 0.4rem 1.2rem; border-radius: 50px;
             font-size: 0.85rem; margin-bottom: 1.5rem; letter-spacing: 1px;
         }
@@ -82,7 +82,7 @@
         }
         .hero-subtitle {
             font-size: 1.2rem; color: var(--muted);
-            max-width: 600px; margin: 0 auto 2rem;
+            max-width: 640px; margin: 0 auto 2rem;
         }
         .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .btn-primary {
@@ -119,7 +119,7 @@
         .section-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; max-width: 600px; }
         #services { background: var(--darker); max-width: 100%; padding: 6rem 2rem; }
         #services .inner { max-width: 1100px; margin: 0 auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
         .service-card {
             background: var(--card); border: 1px solid rgba(108,99,255,0.15);
             border-radius: 16px; padding: 2rem;
@@ -141,10 +141,9 @@
         .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
         .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
         .tag {
-            background: rgba(108,99,255,0.1);
-            border: 1px solid rgba(108,99,255,0.2);
-            color: var(--primary); padding: 0.25rem 0.75rem;
-            border-radius: 50px; font-size: 0.75rem;
+            background: rgba(108,99,255,0.1); color: var(--primary);
+            padding: 0.3rem 0.8rem; border-radius: 50px;
+            font-size: 0.75rem; font-weight: 600;
         }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
         .project-card {
@@ -159,29 +158,42 @@
         .project-header {
             height: 180px; display: flex; align-items: center;
             justify-content: center; font-size: 4rem;
-            position: relative; overflow: hidden;
+            position: relative;
         }
+        .project-header .live-tag {
+            position: absolute; top: 1rem; right: 1rem;
+            background: rgba(0,200,100,0.9); color: #fff;
+            padding: 0.3rem 0.8rem; border-radius: 50px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+        .project-header .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: blink 1.5s infinite; }
         .project-header.blue { background: linear-gradient(135deg, rgba(108,99,255,0.3), rgba(0,212,255,0.2)); }
         .project-header.purple { background: linear-gradient(135deg, rgba(139,83,255,0.3), rgba(255,101,132,0.2)); }
         .project-header.teal { background: linear-gradient(135deg, rgba(0,212,255,0.3), rgba(108,99,255,0.2)); }
+        .project-header.green { background: linear-gradient(135deg, rgba(0,200,100,0.25), rgba(108,99,255,0.2)); }
         .project-body { padding: 1.5rem; }
         .project-body h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
         .project-body p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; margin-bottom: 1rem; }
         .project-metrics { display: flex; gap: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
         .metric {
             background: rgba(0,212,255,0.1);
-            border: 1px solid rgba(0,212,255,0.2);
-            color: var(--accent); padding: 0.2rem 0.6rem;
-            border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+            color: var(--accent); padding: 0.3rem 0.8rem;
+            border-radius: 50px; font-size: 0.75rem; font-weight: 600;
         }
-        .project-links { display: flex; gap: 0.75rem; }
+        .project-tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+        .project-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
         .project-links a {
             color: var(--primary); text-decoration: none;
             font-size: 0.85rem; font-weight: 600;
-            display: flex; align-items: center; gap: 0.3rem;
-            transition: color 0.3s;
+            padding: 0.4rem 0; transition: color 0.3s;
         }
         .project-links a:hover { color: var(--accent); }
+        .project-links .live-link {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff; padding: 0.5rem 1rem; border-radius: 8px;
+        }
+        .project-links .live-link:hover { opacity: 0.9; color: #fff; }
         #skills { background: var(--darker); max-width: 100%; padding: 6rem 2rem; }
         #skills .inner { max-width: 1100px; margin: 0 auto; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
@@ -270,76 +282,62 @@
 <nav>
     <div class="logo">SK.</div>
     <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size:0.9rem;">Hire Me</a>
 </nav>
 
 <div class="hero">
     <div class="hero-content">
-        <div class="hero-badge">✦ Available for Freelance Work</div>
-        <h1>Sarvesh Kommawar<br><span>AI & Data Analyst</span></h1>
+        <div class="hero-badge">✦ Open to AI Engineer / Data Engineer Roles</div>
+        <h1>Sarvesh Kommawar<br><span>AI & Data Engineer</span></h1>
         <p class="hero-subtitle">
-            I turn raw data into interactive dashboards, actionable insights, and AI-powered workflows that help businesses make smarter decisions — faster.
+            I turn ideas into shipped AI. From LLM agents and RAG pipelines to full-stack AI products — built, deployed, and live. Transitioning from AI Analyst to AI Engineer by building real systems.
         </p>
         <div class="hero-buttons">
-            <a href="#projects" class="btn-primary">View My Work</a>
-            <a href="#contact" class="btn-secondary">Hire Me</a>
+            <a href="#projects" class="btn-primary">View My Projects</a>
+            <a href="#contact" class="btn-secondary">Get In Touch</a>
         </div>
         <div class="hero-stats">
-            <div class="stat"><div class="stat-number">200+</div><div class="stat-label">Prompts Engineered</div></div>
-            <div class="stat"><div class="stat-number">5,000+</div><div class="stat-label">AI Outputs Annotated</div></div>
-            <div class="stat"><div class="stat-number">30%</div><div class="stat-label">Model Accuracy Boost</div></div>
-            <div class="stat"><div class="stat-number">40%</div><div class="stat-label">Reporting Time Saved</div></div>
+            <div class="stat"><div class="stat-number">4</div><div class="stat-label">Projects Deployed</div></div>
+            <div class="stat"><div class="stat-number">3</div><div class="stat-label">Live AI Apps</div></div>
+            <div class="stat"><div class="stat-number">1</div><div class="stat-label">Full-Stack Build</div></div>
+            <div class="stat"><div class="stat-number">RAG</div><div class="stat-label">Agents & LLMs</div></div>
         </div>
     </div>
 </div>
 
 <section id="services">
     <div class="inner">
-        <div class="section-label">What I Offer</div>
-        <h2 class="section-title">Services That Deliver <span>Real Results</span></h2>
-        <p class="section-sub">From messy spreadsheets to executive-ready dashboards. From raw data to AI-powered insights.</p>
+        <div class="section-label">What I Build</div>
+        <h2 class="section-title">AI Engineering <span>Capabilities</span></h2>
+        <p class="section-sub">From raw data and a blank file to deployed AI products. Here's what I take from idea to live.</p>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Power BI Dashboard Development</h3>
-                <p>Interactive, filterable dashboards that track your most critical KPIs. From revenue and sales to customer analytics and HR metrics.</p>
-                <div class="service-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPI Tracking</span></div>
-            </div>
-            <div class="service-card">
                 <div class="service-icon">🤖</div>
-                <h3>AI Prompt Engineering & Workflows</h3>
-                <p>Custom ChatGPT and Claude prompt libraries, AI workflow automation, and LLM optimization for your specific business processes.</p>
-                <div class="service-tags"><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Automation</span></div>
+                <h3>LLM & Agentic AI Systems</h3>
+                <p>I build agent-style workflows — search, fetch, reason, and output — with guardrails, source control, and honest reporting. Not just chatbots.</p>
+                <div class="service-tags"><span class="tag">LLMs</span><span class="tag">Agents</span><span class="tag">OpenRouter</span></div>
             </div>
             <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>Data Analysis & Insight Reports</h3>
-                <p>Deep-dive analysis of your business data using SQL and Python. I surface trends, anomalies, and opportunities with actionable recommendations.</p>
-                <div class="service-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Pandas</span></div>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🧹</div>
-                <h3>Data Cleaning & Preparation</h3>
-                <p>Transform messy, inconsistent data into clean, analysis-ready datasets. Duplicate removal, standardization, and validation included.</p>
-                <div class="service-tags"><span class="tag">Excel</span><span class="tag">Python</span><span class="tag">SQL</span></div>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📈</div>
-                <h3>Revenue & Sales Analytics</h3>
-                <p>Identify revenue trends, churn signals, and high-value customer segments. I've analyzed 20,000+ sales records for real businesses.</p>
-                <div class="service-tags"><span class="tag">Revenue Analysis</span><span class="tag">Forecasting</span><span class="tag">Churn</span></div>
+                <div class="service-icon">📄</div>
+                <h3>RAG & Data Grounding</h3>
+                <p>Retrieval-augmented generation over private documents and live web data. Grounded answers with citations and "what could not be verified" sections.</p>
+                <div class="service-tags"><span class="tag">RAG</span><span class="tag">Trafilatura</span><span class="tag">Vector</span></div>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚡</div>
-                <h3>Automated Reporting Pipelines</h3>
-                <p>Replace manual weekly reports with automated pipelines. Save hours every week and eliminate human error from your reporting process.</p>
-                <div class="service-tags"><span class="tag">ETL</span><span class="tag">Automation</span><span class="tag">SQL</span></div>
+                <h3>Full-Stack AI Apps</h3>
+                <p>React + Tailwind frontend, FastAPI backend, LLM integration, deployment on Vercel + Render. Taking AI from notebook to production.</p>
+                <div class="service-tags"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Deploy</span></div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Engineering & Analysis</h3>
+                <p>Data extraction, parsing, cleaning, and pipeline work. Strong analyst foundation — SQL, Python, dashboards — now applied to AI systems.</p>
+                <div class="service-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">ETL</span></div>
             </div>
         </div>
     </div>
@@ -347,63 +345,96 @@
 
 <section id="projects">
     <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Projects That <span>Prove the Work</span></h2>
-    <p class="section-sub">Real dashboards, real data, real results.</p>
+    <h2 class="section-title">Deployed AI <span>Projects</span></h2>
+    <p class="section-sub">Real builds, live and open-source. Each one taught me a different layer of AI engineering.</p>
     <div class="projects-grid">
+
         <div class="project-card">
-            <div class="project-header blue">📊</div>
+            <div class="project-header violet" style="background: linear-gradient(135deg, rgba(167,139,250,0.3), rgba(255,101,132,0.2));">
+                📊
+                <div class="live-tag"><span class="live-dot"></span>LIVE</div>
+            </div>
             <div class="project-body">
-                <h3>Revenue Pulse Dashboard</h3>
-                <p>End-to-end BI dashboard built from 15,000+ records tracking 10 revenue KPIs including CLV, MRR, and churn rate across 3 business units.</p>
+                <h3>Executive AI Business Analyst</h3>
+                <p>My first <strong>full-stack AI product</strong>. Enter a business question → get an executive report with SWOT, competitor tables, risks, and strategic recommendations. React + FastAPI + OpenRouter, deployed on Vercel + Render.</p>
                 <div class="project-metrics">
-                    <span class="metric">40% less manual reporting</span>
-                    <span class="metric">15,000+ records</span>
-                    <span class="metric">10 KPIs</span>
+                    <span class="metric">Full-Stack</span>
+                    <span class="metric">React + FastAPI</span>
                 </div>
-                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
-                    <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span>
+                <div class="project-tags">
+                    <span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Tailwind</span><span class="tag">OpenRouter</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/sarusarvesh993-cyber" target="_blank">→ View on GitHub</a>
+                    <a href="https://executive-ai-business-analyst.vercel.app/" class="live-link" target="_blank">▶ Live App</a>
+                    <a href="https://github.com/sarusarvesh993-cyber/Executive-AI-Business-Analyst" target="_blank">→ Code</a>
                 </div>
             </div>
         </div>
+
         <div class="project-card">
-            <div class="project-header purple">🛒</div>
+            <div class="project-header blue">
+                🔍
+                <div class="live-tag"><span class="live-dot"></span>LIVE</div>
+            </div>
             <div class="project-body">
-                <h3>E-Commerce AI Analytics</h3>
-                <p>Analyzed 10,000+ transactions to identify top-revenue customers, seasonal trends, and funnel drop-off points. Insights adopted into live marketing strategy.</p>
+                <h3>AI Web Research Agent</h3>
+                <p>An <strong>agentic workflow</strong> that takes a question, generates targeted search queries, fetches & reads webpages, handles blocked sources, and returns a structured research report with citations.</p>
                 <div class="project-metrics">
-                    <span class="metric">10,000+ transactions</span>
-                    <span class="metric">Funnel Analysis</span>
-                    <span class="metric">Live Impact</span>
+                    <span class="metric">Agentic AI</span>
+                    <span class="metric">Cited Report</span>
                 </div>
-                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
-                    <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span>
+                <div class="project-tags">
+                    <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">DuckDuckGo</span><span class="tag">Trafilatura</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/sarusarvesh993-cyber" target="_blank">→ View on GitHub</a>
+                    <a href="https://ai-web-research-agent-ejn5mec3hkf7pn58hf5ck8.streamlit.app/" class="live-link" target="_blank">▶ Live App</a>
+                    <a href="https://github.com/sarusarvesh993-cyber/AI-Web-Research-Agent" target="_blank">→ Code</a>
                 </div>
             </div>
         </div>
+
         <div class="project-card">
-            <div class="project-header teal">🧠</div>
+            <div class="project-header green" style="background: linear-gradient(135deg, rgba(52,211,153,0.25), rgba(108,99,255,0.2));">
+                🎯
+                <div class="live-tag"><span class="live-dot"></span>LIVE</div>
+            </div>
             <div class="project-body">
-                <h3>LLM Prompt Optimization Suite</h3>
-                <p>Systematic prompt evaluation framework testing 100+ prompt variants. Improved task-specific LLM output quality by 35% for classification and summarization tasks.</p>
+                <h3>AI Job Application Agent</h3>
+                <p>Upload a resume + paste a job description → get a <strong>structured workflow</strong>: match score, skill-gap analysis, tailored cover letter, interview prep, and a 7-day action plan.</p>
                 <div class="project-metrics">
-                    <span class="metric">35% quality improvement</span>
-                    <span class="metric">100+ prompts tested</span>
-                    <span class="metric">GPT-4</span>
+                    <span class="metric">Workflow</span>
+                    <span class="metric">Resume Parser</span>
                 </div>
-                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
-                    <span class="tag">Python</span><span class="tag">GPT-4</span><span class="tag">Prompt Engineering</span>
+                <div class="project-tags">
+                    <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">pypdf</span><span class="tag">python-docx</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/sarusarvesh993-cyber" target="_blank">→ View on GitHub</a>
+                    <a href="https://ai-job-application-agent-g9ydk6v4hh7upp7dhxajxp.streamlit.app/" class="live-link" target="_blank">▶ Live App</a>
+                    <a href="https://github.com/sarusarvesh993-cyber/AI-Job-Application-Agent" target="_blank">→ Code</a>
                 </div>
             </div>
         </div>
+
+        <div class="project-card">
+            <div class="project-header teal">
+                📄
+            </div>
+            <div class="project-body">
+                <h3>PDF Chat Agent (RAG)</h3>
+                <p>A <strong>retrieval-augmented generation</strong> system for private document intelligence. Chat with your own PDFs — grounded answers, not hallucinations. The project that started my AI Engineer journey.</p>
+                <div class="project-metrics">
+                    <span class="metric">RAG</span>
+                    <span class="metric">Private Docs</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">LLM</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/sarusarvesh993-cyber" class="live-link" target="_blank">→ View on GitHub</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -411,31 +442,31 @@
     <div class="inner">
         <div class="section-label">Technical Stack</div>
         <h2 class="section-title">Skills & <span>Expertise</span></h2>
-        <p class="section-sub">A full-stack data toolkit — from raw data to AI-powered insights and interactive dashboards.</p>
+        <p class="section-sub">A toolkit spanning AI engineering, data, and full-stack development — from LLMs to deployment.</p>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>📊 BI & Visualization</h3>
-                <div class="skill-item"><div class="skill-info"><span>Power BI & DAX</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>Excel (Advanced)</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>KPI Dashboard Design</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+                <h3>🤖 AI & LLM Engineering</h3>
+                <div class="skill-item"><div class="skill-info"><span>LLMs & Prompt Engineering</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>Agentic AI Workflows</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>RAG & Retrieval Systems</span><span>83%</span></div><div class="skill-bar"><div class="skill-fill" style="width:83%"></div></div></div>
             </div>
             <div class="skill-category">
-                <h3>💻 Programming & Data</h3>
+                <h3>💻 Full-Stack & Backend</h3>
+                <div class="skill-item"><div class="skill-info"><span>Python</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>FastAPI</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>React.js & Tailwind</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+            </div>
+            <div class="skill-category">
+                <h3>📊 Data & Analytics</h3>
                 <div class="skill-item"><div class="skill-info"><span>SQL</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>Python (Pandas, NumPy)</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>Apache Spark</span><span>65%</span></div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>Data Extraction & Parsing</span><span>87%</span></div><div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>Power BI & Dashboards</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
             </div>
             <div class="skill-category">
-                <h3>🤖 AI & LLM Tools</h3>
-                <div class="skill-item"><div class="skill-info"><span>Prompt Engineering</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>LLM Evaluation & RLHF</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>GPT-4 / Claude</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-            </div>
-            <div class="skill-category">
-                <h3>📋 Analytics & Process</h3>
-                <div class="skill-item"><div class="skill-info"><span>Data Cleaning & ETL</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>Revenue & Sales Analytics</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-                <div class="skill-item"><div class="skill-info"><span>Data Annotation & QA</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <h3>🚀 Tools & Deployment</h3>
+                <div class="skill-item"><div class="skill-info"><span>OpenRouter / OpenAI SDK</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>Streamlit</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <div class="skill-item"><div class="skill-info"><span>Vercel / Render / GitHub</span><span>82%</span></div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
             </div>
         </div>
     </div>
@@ -444,8 +475,19 @@
 <section id="experience">
     <div class="section-label">Work History</div>
     <h2 class="section-title">Professional <span>Experience</span></h2>
-    <p class="section-sub">Real experience. Real numbers. Real impact.</p>
+    <p class="section-sub">Real experience. Real numbers. Now leveling up from Analyst to Engineer.</p>
     <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Jun 2026 – Present</div>
+            <h3>AI Engineer (Build in Public)</h3>
+            <div class="timeline-company">Self-Initiated Projects — Remote</div>
+            <ul>
+                <li>Designed and deployed 4 production-style AI systems: full-stack AI app (React + FastAPI), agentic research agent, workflow agent, and RAG document chat</li>
+                <li>Built full-stack architecture: React/Tailwind frontend, FastAPI backend, CORS handling, secure API key management, Vercel + Render deployment</li>
+                <li>Engineered agentic workflows with tool use, source filtering, guardrails, and "honest output" sections</li>
+            </ul>
+        </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-date">Dec 2025 – Present</div>
@@ -487,11 +529,11 @@
 
 <section id="contact">
     <div class="inner">
-        <div class="available-badge"><div class="available-dot"></div>Available for New Projects</div>
+        <div class="available-badge"><div class="available-dot"></div>Open to AI Engineer / Data Engineer Roles</div>
         <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Ready to Turn Your Data<br><span>Into Decisions?</span></h2>
+        <h2 class="section-title">Let's Build Something<br><span>With AI</span></h2>
         <p class="section-sub" style="margin: 1rem auto 0;">
-            Send me your dataset. I'll tell you exactly what I can build before you spend a single dollar. Fast response. No fluff.
+            I'm actively looking for AI Engineer / Data Engineer roles. Whether you're hiring, building AI products, or want to collaborate — let's connect.
         </p>
         <div class="contact-links">
             <a href="mailto:kommawar57@gmail.com" class="contact-link">📧 kommawar57@gmail.com</a>
@@ -503,7 +545,7 @@
 </section>
 
 <footer>
-    <p>© 2025 Sarvesh Kommawar · AI & Data Analyst · Hyderabad, India · Open to Remote Work Worldwide</p>
+    <p>© 2026 Sarvesh Kommawar · AI & Data Engineer · Telangana, India · Open to Remote Work Worldwide</p>
 </footer>
 
 </body>
